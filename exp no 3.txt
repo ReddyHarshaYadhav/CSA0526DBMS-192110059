@@ -1,0 +1,147 @@
+mysql> select * from person;
++----------+-----------+-----------+------+
+| personId | lastName  | FirstName | Age  |
++----------+-----------+-----------+------+
+|        1 | Hansen    | Ola       |   30 |
+|        2 | Svendson  | Tove      |   23 |
+|        3 | Pettersen | Kari      |   20 |
++----------+-----------+-----------+------+
+3 rows in set (0.00 sec)
+mysql> select * from person where LastName like 'Sv%';
++----------+----------+-----------+------+
+| personId | lastName | FirstName | Age  |
++----------+----------+-----------+------+
+|        2 | Svendson | Tove      |   23 |
++----------+----------+-----------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from person where LastName like '%n';
++----------+-----------+-----------+------+
+| personId | lastName  | FirstName | Age  |
++----------+-----------+-----------+------+
+|        1 | Hansen    | Ola       |   30 |
+|        2 | Svendson  | Tove      |   23 |
+|        3 | Pettersen | Kari      |   20 |
++----------+-----------+-----------+------+
+3 rows in set (0.00 sec)
+mysql> insert into student values(12,'harsha','m',8/5/2003,78422,'tirupati');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from student;
++-------+----------+--------+------+-------+----------+
+| regno | name     | gender | dob  | mobno | city     |mysql> select * from person;
++-------+----------+--------+------+-------+----------+
++----------+-----------+-----------+------+
+| personId | lastName  | FirstName | Age  |
++----------+-----------+-----------+------+
+|    12 | nagasrinivas | m      |    0 | 78422 | tirupati |
+|        1 | Hansen    | Ola       |   30 |
++-------+----------+--------+------+-------+----------+
+|        2 | Svendson  | Tove      |   23 |
+1 row in set (0.00 sec)
+|        3 | Pettersen | Kari      |   20 |
+
++----------+-----------+-----------+------+
+mysql> insert into faculty values(23,'vamsi','m',3/5/1981,12345,8/5/1965,'cse');
+3 rows in set (0.00 sec)
+Query OK, 1 row affected (0.00 sec)
+mysql> select * from person where LastName like 'Sv%';
+
++----------+----------+-----------+------+
+mysql> select * from faculty;
+| personId | lastName | FirstName | Age  |
++-------+---------+--------+------+----------+------+------+
++----------+----------+-----------+------+
+| Facno | FacName | gender | Dob  | mobileno | DOJ  | dept |
+|        2 | Svendson | Tove      |   23 |
++-------+---------+--------+------+----------+------+------+
++----------+----------+-----------+------+
+|    12 | deepa   | f      |    0 |    89399 |    0 | DBMS |
+1 row in set (0.00 sec)
+|    23 | vamsi   | m      |    0 |    12345 |    0 | cse  |
+
++-------+---------+--------+------+----------+------+------+
+mysql> select * from person where LastName like '%n';
+2 rows in set (0.00 sec)
++----------+-----------+-----------+------+
+mysql>  inser into department values(5214,'cse','nagasrinivas');
+| personId | lastName  | FirstName | Age  |
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'inser into department values(5214,'cse','rangaraj')' at line 1
++----------+-----------+-----------+------+
+mysql> select * from department;
+|        1 | Hansen    | Ola       |   30 |
+Empty set (0.00 sec)
+|        2 | Svendson  | Tove      |   23 |
+
+|        3 | Pettersen | Kari      |   20 |
+mysql> desc department;
++----------+-----------+-----------+------+
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+| Field    | Type     | Null | Key | Default | Extra |
+mysql> insert into student values(12,'harsha','m',8/5/2003,78422,'tirupati');
++----------+----------+------+-----+---------+-------+
+Query OK, 1 row affected (0.00 sec)
+| deptno   | int(10)  | NO   | PRI | 0       |       |
+
+| deptname | char(10) | YES  |     | NULL    |       |
+mysql> select * from student;
+| depthead | char(10) | YES  |     | NULL    |       |
++-------+----------+--------+------+-------+----------+
++----------+----------+------+-----+---------+-------+
+| regno | name     | gender | dob  | mobno | city     |
+3 rows in set (0.03 sec)
++-------+----------+--------+------+-------+----------+
+
+|    12 | harsha | m      |    0 | 78422 | tirupati |
+mysql> insert into department values(5214,'cse','rangaraj');
++-------+----------+--------+------+-------+----------+
+Query OK, 1 row affected (0.00 sec)
+1 row in set (0.00 sec)
+
+
+mysql> select
+mysql> insert into faculty values(23,'vamsi','m',3/5/1981,12345,8/5/1965,'cse');
+    -> * from department;
+Query OK, 1 row affected (0.00 sec)
++--------+----------+----------+
+
+| deptno | deptname | depthead |
+mysql> select * from faculty;
++--------+----------+----------+
++-------+---------+--------+------+----------+------+------+
+|   5214 | cse      | rangaraj |
+| Facno | FacName | gender | Dob  | mobileno | DOJ  | dept |
++--------+----------+----------+
++-------+---------+--------+------+----------+------+------+
+1 row in set (0.00 sec)
+|    12 | deepa   | f      |    0 |    89399 |    0 | DBMS |
+|    23 | vamsi   | m      |    0 |    12345 |    0 | cse  |
++-------+---------+--------+------+----------+------+------+
+2 rows in set (0.00 sec)
+mysql>  inser into department values(5214,'cse','harsha');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'inser into department values(5214,'cse','rangaraj')' at line 1
+mysql> select * from department;
+Empty set (0.00 sec)
+
+mysql> desc department;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| deptno   | int(10)  | NO   | PRI | 0       |       |
+| deptname | char(10) | YES  |     | NULL    |       |
+| depthead | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
+mysql> insert into department values(5214,'cse','rangaraj');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select
+    -> * from department;
++--------+----------+----------+
+| deptno | deptname | depthead |
++--------+----------+----------+
+|   5214 | cse      | rangaraj |
++--------+----------+----------+
+1 row in set (0.00 sec)
