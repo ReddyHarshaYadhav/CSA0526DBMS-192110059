@@ -17,3 +17,5 @@
 [SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%208.txt
 ## Experiment 9
 [SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%209.txt
+## Experiment 10
+[SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2010.txt
