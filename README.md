@@ -5,3 +5,5 @@
 [SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%202.txt
 ## Experiment 3
 [SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%203.txt
+## Experiment 4
+[SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%204.txt
