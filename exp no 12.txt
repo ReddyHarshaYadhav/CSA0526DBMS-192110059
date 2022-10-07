@@ -1,0 +1,28 @@
+
+mysql> use harsha;
+Database changed
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE movie_loop()
+    -> BEGIN
+    -> DECLARE num INT default 1;
+    -> DECLARE res Varchar(50) default ' ';
+    -> while num < 50000 DO
+    -> set res=CONCAT(res,num,',');
+    -> set num=num*4;
+    -> END While;
+    -> SELECT res;
+    -> END //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> call movie_loop();
+    -> //
++---------------------------------+
+| res                             |
++---------------------------------+
+|  1,4,16,64,256,1024,4096,16384, |
++---------------------------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
