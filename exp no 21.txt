@@ -1,0 +1,49 @@
+
+mysql> select * from employee;
++--------+---------------+------------+------------+--------+------------+------------+
+| emp_id | emp_name      | DOB        | DOJ        | salary | address    | experience |
++--------+---------------+------------+------------+--------+------------+------------+
+|   1923 | martha        | 2003-02-06 | 2022-04-16 |  95000 | winden     |          2 |
+|   1920 | ragnar        | 1203-03-23 | 1228-02-05 |  25000 | norway     |         10 |
+|   1922 | thomas shelby | 1902-05-17 | 1923-04-06 |  55000 | birmingham |          8 |
++--------+---------------+------------+------------+--------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> create table dept
+    -> (dept_id int(2),
+    -> dept_name char(10),
+    -> emp_id int(4));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into dept values(21,"sales",1923),(23,"accounts",1922);
+Query OK, 2 rows affected (0.04 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select*from dept;
++---------+-----------+--------+
+| dept_id | dept_name | emp_id |
++---------+-----------+--------+
+|      21 | sales     |   1923 |
+|      23 | accounts  |   1922 |
++---------+-----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select e.emp_name,e.address,d.dept_id,d.dept_name from employee e inner join dept d on e.emp_id=d.emp_id;
++---------------+------------+---------+-----------+
+| emp_name      | address    | dept_id | dept_name |
++---------------+------------+---------+-----------+
+| martha        | winden     |      21 | sales     |
+| thomas shelby | birmingham |      23 | accounts  |
++---------------+------------+---------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> select e.emp_name,e.salary,d.dept_name from employee e inner join dept d on e.emp_id=d.emp_id;
++---------------+--------+-----------+
+| emp_name      | salary | dept_name |
++---------------+--------+-----------+
+| martha        |  95000 | sales     |
+| thomas shelby |  55000 | accounts  |
++---------------+--------+-----------+
+2 rows in set (0.00 sec)
+
+mysql>
