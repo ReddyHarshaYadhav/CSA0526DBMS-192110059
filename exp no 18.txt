@@ -1,0 +1,86 @@
+
+mysql> select*from movie;
+    -> //
++-----------------+----------+------------+-------------+------------+-------------------+
+| movie_name      | genre    | actor_name | director    | production | theatres_released |
++-----------------+----------+------------+-------------+------------+-------------------+
+| mankatha        | thriller | ajithkumar | venkat      | sun        |               700 |
+| ponniyin_selvan | history  | jayamravi  | manirathnam | lyca       |              1000 |
+| thunivu         | crime    | ajithkumar | vinoth      | bayview    |               800 |
+| vikram          | action   | kamal      | lokesh      | RKFI       |               900 |
++-----------------+----------+------------+-------------+------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select @@autocommit;
+    -> //
++--------------+
+| @@autocommit |
++--------------+
+|            1 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> insert into movie values("vaaranam aayiram","romance","suriya","GVM","pr",500);
+    -> //
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select*from movie;
+    -> //
++------------------+----------+------------+-------------+------------+-------------------+
+| movie_name       | genre    | actor_name | director    | production | theatres_released |
++------------------+----------+------------+-------------+------------+-------------------+
+| mankatha         | thriller | ajithkumar | venkat      | sun        |               700 |
+| ponniyin_selvan  | history  | jayamravi  | manirathnam | lyca       |              1000 |
+| thunivu          | crime    | ajithkumar | vinoth      | bayview    |               800 |
+| vaaranam aayiram | romance  | suriya     | GVM         | pr         |               500 |
+| vikram           | action   | kamal      | lokesh      | RKFI       |               900 |
++------------------+----------+------------+-------------+------------+-------------------+
+5 rows in set (0.00 sec)
+
+mysql> set autocommit=0;
+    -> //
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select @@autocommit;
+    -> //
++--------------+
+| @@autocommit |
++--------------+
+|            0 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> delete from movie where genre="crime";
+    -> //
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select*from movie;
+    -> //
++------------------+----------+------------+-------------+------------+-------------------+
+| movie_name       | genre    | actor_name | director    | production | theatres_released |
++------------------+----------+------------+-------------+------------+-------------------+
+| mankatha         | thriller | ajithkumar | venkat      | sun        |               700 |
+| ponniyin_selvan  | history  | jayamravi  | manirathnam | lyca       |              1000 |
+| vaaranam aayiram | romance  | suriya     | GVM         | pr         |               500 |
+| vikram           | action   | kamal      | lokesh      | RKFI       |               900 |
++------------------+----------+------------+-------------+------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> rollback;
+    -> //
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select*from movie;
+    -> //
++------------------+----------+------------+-------------+------------+-------------------+
+| movie_name       | genre    | actor_name | director    | production | theatres_released |
++------------------+----------+------------+-------------+------------+-------------------+
+| mankatha         | thriller | ajithkumar | venkat      | sun        |               700 |
+| ponniyin_selvan  | history  | jayamravi  | manirathnam | lyca       |              1000 |
+| thunivu          | crime    | ajithkumar | vinoth      | bayview    |               800 |
+| vaaranam aayiram | romance  | suriya     | GVM         | pr         |               500 |
+| vikram           | action   | kamal      | lokesh      | RKFI       |               900 |
++------------------+----------+------------+-------------+------------+-------------------+
+5 rows in set (0.00 sec)
+
+mysql>
