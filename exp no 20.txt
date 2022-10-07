@@ -1,0 +1,115 @@
+
+mysql> create table employee
+    -> (emp_id int(4),
+    -> emp_name char(20),
+    -> DOB DATE,
+    -> DOJ DATE,
+    -> salary int(6),
+    -> address char(20),
+    -> experience int(2));
+    -> //
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into employee values(1920,"ragnar",'1203-03-23','1228-02-05',25000,"norway",10),(1921,"jonsnow",'1407-02-27','1430-08-28',45000,"winterfell",12),(1922,"thomas shelby",'1902-05-17','1923-04-06',55000,"birmingham",08);
+    -> //
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select*from employee;
+    -> //
++--------+---------------+------------+------------+--------+------------+------------+
+| emp_id | emp_name      | DOB        | DOJ        | salary | address    | experience |
++--------+---------------+------------+------------+--------+------------+------------+
+|   1920 | ragnar        | 1203-03-23 | 1228-02-05 |  25000 | norway     |         10 |
+|   1921 | jonsnow       | 1407-02-27 | 1430-08-28 |  45000 | winterfell |         12 |
+|   1922 | thomas shelby | 1902-05-17 | 1923-04-06 |  55000 | birmingham |          8 |
++--------+---------------+------------+------------+--------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> update employee set salary=70000 where address="birmingham";
+    -> //
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from employee;
+    -> //
++--------+---------------+------------+------------+--------+------------+------------+
+| emp_id | emp_name      | DOB        | DOJ        | salary | address    | experience |
++--------+---------------+------------+------------+--------+------------+------------+
+|   1920 | ragnar        | 1203-03-23 | 1228-02-05 |  25000 | norway     |         10 |
+|   1921 | jonsnow       | 1407-02-27 | 1430-08-28 |  45000 | winterfell |         12 |
+|   1922 | thomas shelby | 1902-05-17 | 1923-04-06 |  70000 | birmingham |          8 |
++--------+---------------+------------+------------+--------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select sum(salary),min(salary),max(salary),avg(salary) from employee;
+    -> //
++-------------+-------------+-------------+-------------+
+| sum(salary) | min(salary) | max(salary) | avg(salary) |
++-------------+-------------+-------------+-------------+
+|      140000 |       25000 |       70000 |  46666.6667 |
++-------------+-------------+-------------+-------------+
+1 row in set (0.04 sec)
+
+mysql> select from employee where experience=12;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from employee where experience=12' at line 1
+mysql> select emp_name,address where experience=12;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where experience=12' at line 1
+mysql> select emp_name,address where emp_id=1921;
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where emp_id=1921' at line 1
+mysql>
+
+
+mysql> insert into employee values(1923,"martha",'2003-02-06','2022-04-16',95000,"winden",2);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from employee;
++--------+----------+------------+------------+--------+---------+------------+
+| emp_id | emp_name | DOB        | DOJ        | salary | address | experience |
++--------+----------+------------+------------+--------+---------+------------+
+|   1923 | martha   | 2003-02-06 | 2022-04-16 |  95000 | winden  |          2 |
++--------+----------+------------+------------+--------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into employee values(1920,"ragnar",'1203-03-23','1228-02-05',25000,"norway",10),(1921,"jonsnow",'1407-02-27','1430-08-28',45000,"winterfell",12),(1922,"thomas shelby",'1902-05-17','1923-04-06',55000,"birmingham",08);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+---------------+------------+------------+--------+------------+------------+
+| emp_id | emp_name      | DOB        | DOJ        | salary | address    | experience |
++--------+---------------+------------+------------+--------+------------+------------+
+|   1923 | martha        | 2003-02-06 | 2022-04-16 |  95000 | winden     |          2 |
+|   1920 | ragnar        | 1203-03-23 | 1228-02-05 |  25000 | norway     |         10 |
+|   1921 | jonsnow       | 1407-02-27 | 1430-08-28 |  45000 | winterfell |         12 |
+|   1922 | thomas shelby | 1902-05-17 | 1923-04-06 |  55000 | birmingham |          8 |
++--------+---------------+------------+------------+--------+------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,address from employee where emp_id=1923;
++----------+---------+
+| emp_name | address |
++----------+---------+
+| martha   | winden  |
++----------+---------+
+1 row in set (0.00 sec)
+
+
+
+mysql> delete from employee where emp_id=1921;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from employee;
++--------+---------------+------------+------------+--------+------------+------------+
+| emp_id | emp_name      | DOB        | DOJ        | salary | address    | experience |
++--------+---------------+------------+------------+--------+------------+------------+
+|   1923 | martha        | 2003-02-06 | 2022-04-16 |  95000 | winden     |          2 |
+|   1920 | ragnar        | 1203-03-23 | 1228-02-05 |  25000 | norway     |         10 |
+|   1922 | thomas shelby | 1902-05-17 | 1923-04-06 |  55000 | birmingham |          8 |
++--------+---------------+------------+------------+--------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql>
