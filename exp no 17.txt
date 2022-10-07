@@ -1,0 +1,26 @@
+
+mysql> select*from movie;
+    -> //
++-----------------+----------+------------+-------------+------------+-------------------+
+| movie_name      | genre    | actor_name | director    | production | theatres_released |
++-----------------+----------+------------+-------------+------------+-------------------+
+| mankatha        | thriller | ajithkumar | venkat      | sun        |               700 |
+| ponniyin_selvan | history  | jayamravi  | manirathnam | lyca       |              1000 |
+| thunivu         | crime    | ajithkumar | vinoth      | bayview    |               800 |
+| vikram          | action   | kamal      | lokesh      | RKFI       |               900 |
++-----------------+----------+------------+-------------+------------+-------------------+
+4 rows in set (0.04 sec)
+
+mysql> select repeat(actor_name,3) from movie;
+    -> //
++--------------------------------+
+| repeat(actor_name,3)           |
++--------------------------------+
+| ajithkumarajithkumarajithkumar |
+| jayamravijayamravijayamravi    |
+| ajithkumarajithkumarajithkumar |
+| kamalkamalkamal                |
++--------------------------------+
+4 rows in set (0.04 sec)
+
+mysql>
