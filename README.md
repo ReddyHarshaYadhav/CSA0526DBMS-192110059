@@ -41,3 +41,11 @@
 [SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2020.txt
 ## Experiment 21
 [SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2021.txt
+## Experiment 22
+[SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2022.txt
+## Experiment 23
+[SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2023.txt
+## Experiment 24
+[SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2024.txt
+## Experiment 25
+[SQL Queries]https://github.com/ReddyHarshaYadhav/CSA0526DBMS-192110059/blob/main/exp%20no%2025.txt
